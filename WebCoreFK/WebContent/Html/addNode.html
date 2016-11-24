@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = initAll;
+	function initAll() {
+		var form0=document.getElementsByTagName("form")[0]
+	
+		    form0.onsubmit = function addNode() {
+			var inText = document.getElementById("textArea").value;
+
+			var newText = document.createTextNode(inText);
+			var newGraf = document.createElement("p");
+			newGraf.appendChild(newText);
+			var docBody = document.getElementsByTagName("body")[0];
+			docBody.appendChild(newGraf);			
+			docBody.insertBefore(newGraf,form0);
+			return false;
+		}
+	}
+	function removeNode() {
+		var allGrafs = document.getElementsByTagName("p");
+		if (allGrafs.length > 1) {
+			var lastGraf = allGrafs.item(allGrafs.length - 1);
+			var docBody = document.getElementsByTagName("body")[0];		
+			docBody.removeChild(lastGraf);
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<form>
+		<p>
+			<textarea id="textArea" rows="5" cols="30"></textarea>
+		</p>
+		<input type="submit" value="添加一个节点" />
+		<input type="button" value="删除最后一个P节点" onclick="removeNode()"/>
+	</form>
+
+</body>
+</html>

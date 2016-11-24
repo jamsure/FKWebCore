@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Js Html</title>
+<script type="text/javascript" src="../JavaScript/js.js"></script>
+</head>
+<body>
+	<button value="点我试试看！" onclick="look()">aa</button>
+	<input type="button" value="点我试试看！" onclick="look()" />
+	<input type="button" value="点一下" onclick="con()">
+	<input type="button" value="关闭页面" onclick="wclose()">
+	<input type="button" value="关闭页面" onclick="o()">
+	<a href="javascript:self.close()">关闭页面</a>
+	<a href="Http://www.baidu.com/">关闭页面1</a>
+
+	<script type="text/javascript">
+		var len = navigator.plugins.length;
+		with (document) {
+			write("你的浏览器共支持" + len + "种外挂插件：<BR>");
+			write("<table border=1 cellspacing=0>");
+			write("<caption>外挂插件清单</caption>");
+			write("<tr><th><th>名称<th>描述<th>文件名");
+			for (var i = 0; i < len; i++) {
+				write("<tr><td>" + i + "<td>" + navigator.plugins[i].name
+						+ "<td>" + navigator.plugins[i].description + "<td>"
+						+ navigator.plugins[i].filename);
+			}
+			write("</table>");
+			write("screen.width : "+screen.width);
+			write("screen.width : "+screen.);
+		}
+		
+		
+		
+	</script>
+	
+
+</body>
+</html>
