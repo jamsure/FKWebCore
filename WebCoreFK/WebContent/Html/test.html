@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var x=0;
+	function aclick(id) {
+		switch(x){
+		case 0:
+			click0(id);
+			break;
+		case 1:
+			click1(id);
+			break;
+		case 2:
+			click2(id);
+			break;
+		case 3:
+			click3(id);
+			break;
+		case 4:
+			click4(id);
+			break;
+		}
+		/* if(x==0){
+			click0(id);
+		}else if(x==1){
+			click1(id);
+		}else if(x==2){
+			click2(id);
+		}else if(x==3){
+			click3(id);
+		}else if(x==4){
+			click4(id);
+		} */
+	}
+	
+	function click0(id){
+		id.innerHTML="再点一下";
+		x++;
+	}
+function click1(id){
+	id.innerHTML="你还点";
+	x++;
+	}
+function click2(id){
+	id.innerHTML="不能再点了";
+	x++;
+}
+function click3(id){
+	id.innerHTML="再点就再见";
+	x++;
+}
+function click4(id){
+	id.hidden=true;
+	x++;
+}
+function view(){
+	var d=document.getElementById("div1");
+	d.innerHTML="点一下";
+	d.hidden=false;
+	x=0;
+}
+</script>
+
+</head>
+<body>
+	<a id = "id001" name="link" href="http://www.baidu.com"> baidu</a>
+	<div id="div1" style="background-color:#D94A38;width:120px;height:20px;padding:40px;" onclick="aclick(this)" >点一下</div>
+	<p onclick="view()">显示出来</p>
+</body>
+</html>

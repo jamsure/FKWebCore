@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>jquery-roundabout</title>
+<script type="text/javascript" src="../JavaScript/jquery.min.js"></script>
+<script type="text/javascript" src="../JavaScript/jquery.roundabout.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('.roundabout').roundabout();
+	});
+</script>
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font: 24px tahoma;
+}
+
+ul {
+	list-style: none;
+	margin: 100px auto 0;
+	width: 500px;
+	height: 100px;
+
+}
+
+li {
+	height: 100px;
+	width: 200px;
+
+}
+
+.roundabout-in-focus {
+	cursor: default;
+}
+img{
+width: 200px;
+height: 100px;
+}
+</style>
+</head>
+<body>
+
+	<ul class="roundabout">
+		<li><img alt="2.jpg" src="../Images/2.jpg"></li>
+		<li><img alt="2.jpg" src="../Images/3.jpg"></li>
+		<li><img alt="2.jpg" src="../Images/4.jpg"></li>
+		<li><img alt="2.jpg" src="../Images/5.jpg"></li>
+		<li><img alt="2.jpg" src="../Images/6.jpg"></li>
+	</ul>
+</body>
+</html>

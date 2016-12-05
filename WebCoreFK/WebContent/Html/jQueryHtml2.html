@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../JavaScript/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+$("#textarea1").bind('focus',function(){
+	$(this).css('border-color','red')
+});
+
+$("#textarea1").bind('blur',function(){
+	$(this).css('border-color','red')
+});
+
+$('#right').bind('click',function(){
+	$('#div1').animate({
+		left:'+=100px',
+		top:'-=50px',
+		border:'5px solid blue'
+	},3000);
+});
+
+$('#left').bind('click',function(){
+	$('#div1').animate({
+		left:'-=100px',
+		top:'+=50px'
+	},1000);
+});
+
+$('#btnshow').bind('click',function(){
+	$('#ph').hide();
+	$('#ph').fadeIn('slow');
+})
+
+$('#btn3').bind('click',function(){
+	var bval=$('#btn3').val();
+	if(bval=='隐藏'){
+		$('#ph').hide();
+		$('#btn3').val('显示');
+	}else{
+		$('#ph').fadeIn('slow');
+		$('#btn3').val('隐藏');
+	}
+})
+
+$('#btn4').bind('click',function(){
+	$('#div2').animate({
+		width:'240px',
+		height:'320px',
+		borderWidth:'15px'
+	},1000);
+});
+
+$('#btn5').bind('click',function(){
+	$('#div2').animate({
+		width:'24px',
+		height:'32px',
+		borderWidth:'1px'
+	},1000);
+});
+
+$('#btn6').bind('click',big);
+
+function big(){
+	$('#div2').animate({
+		width:'240px',
+		height:'320px'
+	},1000,small);
+}
+
+function small(){
+	$('#div2').animate({
+		width:'24px',
+		height:'32px'
+	},1000,big);
+}
+
+})
+</script>
+</head>
+<body>
+
+	<textarea rows="10" cols="20" id='textarea1'
+		style="border-color: #F5F5F5; resize: none;"></textarea>
+	<hr />
+	<div id="div1"
+		style="position: relative; width: 24px; height: 32px; border: 1px solid red;">
+	</div>
+	<input id='right' type="button" value="向右移动">
+	<input id='left' type="button" value="向左移动">
+	<hr />
+	<p id='ph'>Hello World</p>
+	<input id='btnshow' type="button" value="显示">
+	<input id='btn3' type="button" value="隐藏">
+	<hr>
+	<input id='btn4' type="button" value="变大">
+	<input id='btn5' type="button" value="变小">
+	<input id='btn6' type="button" value="变大变小">
+	<div id="div2"
+		style="position: relative; width: 24px; height: 32px; border: 1px solid red;"></div>
+</body>
+</html>

@@ -15,30 +15,81 @@
 			var newGraf = document.createElement("p");
 			newGraf.appendChild(newText);
 			var docBody = document.getElementsByTagName("body")[0];
-			docBody.appendChild(newGraf);			
 			docBody.insertBefore(newGraf,form0);
+			docBody.appendChild(newGraf);			
 			return false;
 		}
 	}
 	function removeNode() {
 		var allGrafs = document.getElementsByTagName("p");
 		if (allGrafs.length > 1) {
-			var lastGraf = allGrafs.item(allGrafs.length - 1);
+			var lastGraf = allGrafs[allGrafs.length - 1];
 			var docBody = document.getElementsByTagName("body")[0];		
 			docBody.removeChild(lastGraf);
 		}
+	}
+	
+	function tlock(){
+		var tArea=document.getElementById("textArea");
+		tArea.readOnly=true;
+	}
+	function tunlock(){
+		var tArea=document.getElementById("textArea");
+		tArea.readOnly=false;
+	}
+	
+	function changeCon(){
+		var con=prompt("请输入内容：","要写入的内容");
+		document.getElementById("textArea").value=con;
+	}
+	
+	function Student(name,age,phone){
+		this.name=name;
+		this.age=age;
+		this.phone=phone;
+		this.getName=getName;
+		this.getAge=getAge;
+		this.getPhone=getPhone;
+	}
+	function getAge(){
+		return this.age;
+	}
+	function getName(){
+		return this.name;
+	}
+	function getPhone(){
+		return this.phone;
+	}
+	function student1(name,age,phone){
+		var s=new Student(name,age,phone);
+		var str="name:"+s.getName()+"\n age:"+s.getAge()+" \n phone:"+s.getPhone();
+		window.alert(str);
+	}
+	function p1(){
+		var pp=document.getElementById("p1");
+		var f=pp.childNodes;
+		window.alert(f.length);
 	}
 	
 </script>
 </head>
 <body>
 	<form>
-		<p>
-			<textarea id="textArea" rows="5" cols="30"></textarea>
-		</p>
+	<p>
+		<textarea id="textArea" rows="5" cols="30" ></textarea><br/>
+	</p>	
 		<input type="submit" value="添加一个节点" />
-		<input type="button" value="删除最后一个P节点" onclick="removeNode()"/>
+		<input type="button" value="删除最后一个P节点" onclick="removeNode()" /> 
+		<input type="button" value="锁定" onclick="tlock()">
+		<input type="button" value="解锁" onclick="tunlock()">
+		<input type="button" value="改变内容" onclick="changeCon()">
 	</form>
+		<input type="button" value="显示学生" onclick="student1('张三',25,'110120130')">
+		<input type="button" value="p的子节点个数" onclick="p1()">
+<div>
+<p id="p1">a</p>
+<p id="p2">培训</p>
 
+</div>
 </body>
 </html>
