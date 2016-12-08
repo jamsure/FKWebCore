@@ -10,6 +10,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
+	<context-param>
+		<param-name>name</param-name>
+		<param-value>fankai</param-value>
+	</context-param>
+
   <servlet>
   	<servlet-name>he</servlet-name>
   	<jsp-file>/WEB-INF/hello.jsp</jsp-file>
