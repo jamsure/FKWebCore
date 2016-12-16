@@ -22,7 +22,6 @@
 			if("范凯".equals(name) && "123".equals(pwd)){
 			response.setHeader("refresh", "2;URL=welcome.jsp");		//定时跳转
 			session.setAttribute("userid", name);	//将登录的用户名保存在session中
-		
 	%>
 	<h3>用户登录成功，两秒后跳转到欢迎页！</h3>
 	<h3>

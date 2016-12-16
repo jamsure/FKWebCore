@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="application/msword; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <% response.setHeader("Content-Disposition", "attachment;filename=mldn.doc"); %>--%>
 
-<p> 当前时间是：</p>
-<%-- <%@include file="systemTime.html" %> --%>
-
+<h1><%= session.getAttribute("username") %>，你好</h1>
 </body>
 </html>

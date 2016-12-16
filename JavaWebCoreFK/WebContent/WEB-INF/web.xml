@@ -9,36 +9,72 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-
-	<context-param>
-		<param-name>name</param-name>
-		<param-value>fankai</param-value>
-	</context-param>
-
+  <filter>
+    <filter-name>SimpleFilter</filter-name>
+    <filter-class>com.fk.javaweb.filter.SimpleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SimpleFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.fk.javaweb.servlet.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
-  	<servlet-name>he</servlet-name>
-  	<jsp-file>/WEB-INF/hello.jsp</jsp-file>
+    <servlet-name>initServlet</servlet-name>
+    <servlet-class>com.fk.javaweb.servlet.InitServlet</servlet-class>
+    <init-param>
+      <param-name>cc</param-name>
+      <param-value>小矮人</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>he</servlet-name>
-  	<url-pattern>/hello.ff</url-pattern>
+    <servlet-name>initServlet</servlet-name>
+    <url-pattern>/servlet/InitServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  		<servlet-name>dbinit</servlet-name>
-  		<jsp-file>/WEB-INF/dbinit.jsp</jsp-file>
-  		<init-param>
-  			<param-name>driver</param-name>
-  			<param-value>org.git.mm.mysql.Driver</param-value>
-  		</init-param>
-  		<init-param>
-  			<param-name>url</param-name>
-  			<param-value>jdbc:mysql://localhost:3306/mldn</param-value>
-  		</init-param>
+    <servlet-name>initServlet3</servlet-name>
+    <servlet-class>com.fk.javaweb.servlet.InitServlet</servlet-class>
+    <init-param>
+      <param-name>dd</param-name>
+      <param-value>公积金和</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>dbinit</servlet-name>
-  	<url-pattern>/config.mldn</url-pattern>
+    <servlet-name>initServlet3</servlet-name>
+    <url-pattern>/servlet/InitServlet3</url-pattern>
   </servlet-mapping>
-  
+  <context-param>
+    <param-name>name</param-name>
+    <param-value>fankai</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>he</servlet-name>
+    <jsp-file>/WEB-INF/hello.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>he</servlet-name>
+    <url-pattern>/hello.ff</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>dbinit</servlet-name>
+    <jsp-file>/WEB-INF/dbinit.jsp</jsp-file>
+    <init-param>
+      <param-name>driver</param-name>
+      <param-value>org.git.mm.mysql.Driver</param-value>
+    </init-param>
+    <init-param>
+      <param-name>url</param-name>
+      <param-value>jdbc:mysql://localhost:3306/mldn</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dbinit</servlet-name>
+    <url-pattern>/config.mldn</url-pattern>
+  </servlet-mapping>
 </web-app>
