@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ABCHomePage
  */
-@WebServlet("/servlet/ABCHomePage")
+@WebServlet(urlPatterns={"/servlet/ABCHomePage"},
+			name="ABCHomePage")
 public class ABCHomePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

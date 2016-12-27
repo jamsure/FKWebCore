@@ -1,7 +1,5 @@
 package com.fk.javaweb.listener;
 
-import java.io.PrintWriter;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.annotation.WebListener;
 

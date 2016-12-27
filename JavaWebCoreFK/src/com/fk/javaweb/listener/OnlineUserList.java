@@ -1,5 +1,6 @@
 package com.fk.javaweb.listener;
 
+import java.util.HashMap;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
+
+import com.fk.javaweb.javabean.Stu_score;
 
 /**
  * Application Lifecycle Listener implementation class OnlineUserList
@@ -82,6 +85,7 @@ public class OnlineUserList implements HttpSessionAttributeListener, HttpSession
     public void contextInitialized(ServletContextEvent arg0)  { 
     	this.app=arg0.getServletContext();
 		this.app.setAttribute("online", new TreeSet());
+		//this.app.setAttribute("stu_score", new HashMap<String,Stu_score>());
     }
 	
 }
